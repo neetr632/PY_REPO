@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Logs</title>
+</head>
+<body>
+    <textarea id="logs" rows="4" cols="50">Enter your logs here...</textarea><br>
+    <button onclick="sendLogs()">Send Logs</button>
+
+    <script>
+        function sendLogs() {
+            var logs = document.getElementById("logs").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://192.168.29.245:8080/logs", true);
+            xhr.setRequestHeader("Content-Type", "text/plain");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log("Logs sent successfully");
+                }
+            };
+            xhr.send(logs);
+        }
+    </script>
+</body>
+</html>
