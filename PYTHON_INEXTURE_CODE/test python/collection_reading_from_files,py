@@ -1,0 +1,23 @@
+from collections import Counter
+
+
+# Function to count words in a text and normalize to lowercase
+def count_words(text):
+    text = text.lower().split()  # Convert text to lowercase and split into words
+    return Counter(text)
+
+# Read text from file1.txt and file2.txt
+with open("file1.txt", "r", encoding="utf-8") as f1:
+    text_1 = f1.read()
+
+with open("file2.txt", "r", encoding="utf-8") as f2:
+    text_2 = f2.read()
+
+# Count words in each text (normalized to lowercase)
+counter_1 = count_words(text_1)
+counter_2 = count_words(text_2)
+
+counter_1.update(counter_2)
+# Print the combined counts
+for word, count in counter_1.items():
+    print(f"{word}: {count}")
