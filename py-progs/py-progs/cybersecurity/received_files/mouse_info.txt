@@ -1,3 +1,0 @@
-Mouse clicked at (496, 899) with Button.left
-Mouse clicked at (858, 918) with Button.left
-Mouse clicked at (862, 921) with Button.left

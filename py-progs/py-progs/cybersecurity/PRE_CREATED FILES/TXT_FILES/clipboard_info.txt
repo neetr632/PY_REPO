@@ -1,3 +1,0 @@
-Clipboard Data: 
-   handle_key()Clipboard Data: 
-   handle_key()

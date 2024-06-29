@@ -1,1 +1,0 @@
-Interior Angle = (n - 2) * 180° / 5 = 108°
