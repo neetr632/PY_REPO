@@ -1,0 +1,8 @@
+api_id = '26817516'
+api_hash = '7364e62c002e5e04ee78df3ecc09fb66'
+bot_token = '7082815494:AAGM2pzdNdf0N0zHDxT3uH9Ijwqi_3NoCak'
+
+App title:ins_profile_download
+Short name: InsPD
+
+https://www.instagram.com/sunil__art?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
