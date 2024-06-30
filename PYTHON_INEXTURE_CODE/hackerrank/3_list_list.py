@@ -1,15 +1,21 @@
-list_1 = [
-    ["A", 12],
-    ["B", 32],
-    ["F", 7],
-    ["G", 67],
-    ["H", 7],
-    ["C", 43],
-    ["D", 23],
-    ["E", 64],
-]
+scores = []
+list_1 = []
+for _ in range(int(input())):
+    scores.clear()
+    name = input()
+    score = float(input())
+    scores.append(name)
+    scores.append(score)
+    list_1.append(scores[:])
+
 sorted_list = sorted(list_1, key=lambda x: x[1])
-print(sorted_list)
-print(sorted_list[1])
-for x in sorted_list:
-    print(x[1])
+new_list = []
+length = len(sorted_list)
+for i in range(length - 1):
+    if sorted_list[i][1] == sorted_list[i + 1][1]:
+        new_list.append(sorted_list[i])
+        new_list.append(sorted_list[i + 1])
+
+new_list.sort()
+print(new_list[0][0])
+print(new_list[1][0])
