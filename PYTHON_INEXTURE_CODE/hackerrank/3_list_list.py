@@ -1,20 +1,26 @@
-scores = []
-list_1 = []
+students = []
 for _ in range(int(input())):
-    scores.clear()
-    name = input()
-    score = float(input())
-    scores.append(name)
-    scores.append(score)
-    list_1.append(scores[:])
+    name = str(input())
+    try:
+        score = input()
+        if "." in score:
+            score = float(score)
+        else:
+            score = int(score)
+        students.append([name, score])
+    except ValueError:
+        print("Invalid input! Please enter a valid number for score.")
+print(students)
 
-sorted_list = sorted(list_1, key=lambda x: x[1])
-new_list = []
+sorted_list = sorted(students, key=lambda x: x[1])
+print(sorted_list)
+print(sorted_list[1][0])
 length = len(sorted_list)
-for i in range(length - 1):
-    if sorted_list[i][1] == sorted_list[i + 1][1]:
-        new_list.append(sorted_list[i])
-        new_list.append(sorted_list[i + 1])
+print(length)
 
-new_list.sort()
-print(new_list[0])
+
+        
+    
+
+
+
