@@ -17,4 +17,4 @@ for i in range(length - 1):
         new_list.append(sorted_list[i + 1])
 
 new_list.sort()
-print(new_list)
+print(new_list[0])
