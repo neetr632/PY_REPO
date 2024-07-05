@@ -10,17 +10,11 @@ for _ in range(int(input())):
         students.append([name, score])
     except ValueError:
         print("Invalid input! Please enter a valid number for score.")
-print(students)
+print(f"unsorted_list:-{students}")
 
 sorted_list = sorted(students, key=lambda x: x[1])
-print(sorted_list)
-print(sorted_list[1][0])
+
+print(f"sorted_list:- {sorted_list}")
+print(f"student with 2nd highest marks:- {sorted_list[1][0]}")
 length = len(sorted_list)
-print(length)
-
-
-        
-    
-
-
-
+print(f"length of the nested list:- {length}")
