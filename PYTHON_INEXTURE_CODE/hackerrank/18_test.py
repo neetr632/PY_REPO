@@ -1,21 +1,28 @@
-import re
+#!/bin/python3
 
-# Pattern to match strings that do not start with a digit
-pattern = r"^(?!\d).*"
+# import math
+# import os
+# import random
+import re
+# import sys
+pattern = r"^(?!\d)"
 
 def solve(s):
-    results = []
+    capitalized_words = []
     for x in s.split():
-        filtered_text = re.findall(pattern, x)
-        # print(filtered_text)
-        if filtered_text:
-            result = " ".join(filtered_text)
-            print(result)
-            result = result.title()  # Capitalize the first letter of each word
-            results.append(result)
-    return " ".join(results)
+        if re.match(pattern, x):
+            capitalized_words.append(x.capitalize())
+        if not re.match(pattern, x):
+            capitalized_words.append(x)
+    return " ".join(capitalized_words)
+        
+# if __name__ == '__main__':
+#     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-# Example usage:    
 s = input()
-output = solve(s)
-print(output)
+result = solve(s)
+print(result)
+
+    # fptr.write(result + '\n')
+
+    # fptr.close()
