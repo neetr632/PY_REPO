@@ -1,5 +1,4 @@
 import numpy as np
-
 def create_matrix():
     dimensions = input().split()
     rows, cols = int(dimensions[0]), int(dimensions[1])
