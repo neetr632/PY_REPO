@@ -8,7 +8,7 @@ def merge_the_tools(string, k):
         od = OrderedDict()
         for j in substring:
             od[j] = None
-        print(''.join(od.keys()))
+        print(''.join(od.keys()) )
 
 
 # if __name__ == '__main__':
