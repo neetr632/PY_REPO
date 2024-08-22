@@ -27,7 +27,7 @@ def generate_pii():
         "Voter ID": f"{random_uppercase_string(2)}-{random.randint(1000000000, 9999999999)}"  # Voter ID format
     }
 
-for _ in range(500000):
+for _ in range(5000):
     pii_data = generate_pii()
     resultant_dataset.append(pii_data)
 print("Sample PII Data:")
