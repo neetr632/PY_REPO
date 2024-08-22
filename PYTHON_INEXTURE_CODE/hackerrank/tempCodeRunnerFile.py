@@ -1,0 +1,1 @@
+digits = re.sub(r'\D', '', phone_number)  # Remo
