@@ -2,9 +2,10 @@ from faker import Faker
 import random
 import string
 import re
+import pandas as pd
 # Initialize Faker
 fake = Faker()
-
+resultant_dataset = []
 def random_uppercase_string(length):
     return ''.join(random.choices(string.ascii_uppercase, k=length))
 
@@ -26,23 +27,9 @@ def generate_pii():
         "Voter ID": f"{random_uppercase_string(2)}-{random.randint(1000000000, 9999999999)}"  # Voter ID format
     }
 
-# Print formatted PII data
-for _ in range(5):
+for _ in range(500000):
     pii_data = generate_pii()
-    print("Sample PII Data:")
-    for key, value in pii_data.items():
-        print(f"{key}: {value}")
-    print("\n" + "-" * 50 + "\n")
-
-# base_paragraph = (
-#     "{first_name} {middle_name} {last_name} recently moved to a new address. His new residence is {address}. "
-#     "He can be reached at {phone_number} or via email at {email}. His Aadhaar number is {aadhaar_number}. "
-#     "John also recently applied for a new PAN card with number {pan}. Additionally, "
-#     "he renewed his driving license with the number {driving_license}. His voter ID is {voter_id}."
-# )
-
-# print("-" * 150)
-# x = re.findall("[a-zA-Z]", paragraph)
-# unique_values = list(set(x)) 
-# sorted = sorted(unique_values)
-# print(sorted)    
+    resultant_dataset.append(pii_data)
+print("Sample PII Data:")
+df = pd.DataFrame(resultant_dataset)
+df.to_excel("output.xlsx", index=False)
